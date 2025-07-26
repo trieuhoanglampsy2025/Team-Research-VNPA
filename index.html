@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lời chúc tốt nghiệp</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #fceabb, #f8b500);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            max-width: 600px;
+        }
+        h1 {
+            color: #f57c00;
+        }
+        .wish {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .author {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #f57c00;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Lời chúc từ Team Research VNPA 🎉</h1>
+        <div class="wish" id="wish">Đang tải lời chúc...</div>
+        <div class="author" id="author"></div>
+        <button onclick="randomWish()">🔄 Lời chúc khác</button>
+    </div>
+
+    <script>
+        const wishes = [
+            {name: "Lâm", text: "Chúc cô gái Hà Nội sớm có được công việc phù hợp và cháy hết mình với đam mê tâm lý học nhé !!!!!"},
+            {name: "Hoàng", text: "Chúc mừng tốt nghiệp, My Friend, you are the best"},
+            {name: "Ngọc", text: "Tốt nghiệp chỉ là khởi đầu, hành trình sắp tới sẽ còn tuyệt hơn nữa!"},
+            {name: "Mai", text: "Mong rằng bạn luôn giữ được ngọn lửa nhiệt huyết với ngành tâm lý học!"},
+            {name: "Phúc", text: "Chúc bạn luôn vững vàng, bản lĩnh và tự tin trên con đường bạn chọn!"}
+        ];
+
+        function randomWish() {
+            const random = wishes[Math.floor(Math.random() * wishes.length)];
+            document.getElementById("wish").textContent = random.text;
+            document.getElementById("author").textContent = "- " + random.name;
+        }
+
+        window.onload = randomWish;
+    </script>
+</body>
+</html>
